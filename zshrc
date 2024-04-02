@@ -4,7 +4,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # Useful oh-my-zsh plugins for Le Wagon bootcamps
-plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search)
+plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search direnv)
 
 # (macOS-only) Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/docs/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
@@ -70,3 +70,19 @@ export EDITOR=code
 
 # Set ipdb as the default Python debugger
 export PYTHONBREAKPOINT=ipdb.set_trace
+export PYTHONPATH="/Users/jack/Developer/LeWagon/code/freudenfranz/04-Decision-Science/01-Project-Setup/data-context-and-setup:$PYTHONPATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc'; fi
+export GOOGLE_APPLICATION_CREDENTIALS=~/Developer/LeWagon/code/freudenfranz/gcp/lewagonbootcamp-415109-f35d5ad39832.json
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/jack/.dart-cli-completion/zsh-config.zsh ]] && . /Users/jack/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
+## export ansdroid studios platform-tools (adb, fastboot)
+export PATH=$PATH:/Users/jack/Library/Android/sdk/platform-tools/
